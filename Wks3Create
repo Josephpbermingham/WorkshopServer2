@@ -1,0 +1,43 @@
+create database wks3;
+\c wks3
+
+create table students (
+StudentID serial PRIMARY KEY ,
+FirstName text,
+LastName text,
+username text,
+email text);
+
+create table workshops(
+WorkshopID serial PRIMARY KEY,
+title text,
+date int,
+location text,
+maxSeats int,
+instructor text);
+
+
+create table crosscheck(
+
+student int NOT NULL,
+constraint student_id_fk
+FOREIGN KEY (student) REFERENCES students (StudentID),
+
+workshop int NOT NULL,
+constraint workshop_id_fk
+FOREIGN KEY (workshop)
+REFERENCES workshops (WorkshopID)
+);
+
+INSERT into students(firstname,lastname,username,email) VALUES
+	('joe','bermingham','jberming','josephp@ppp');
+
+
+
+INSERT into workshops(title,date,location,maxSeats,instructor) VALUES
+('computers','010198','trinkle','50','phil');
+
+
+
+
+
