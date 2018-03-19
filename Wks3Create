@@ -1,3 +1,5 @@
+
+drop database wks3;
 create database wks3;
 \c wks3
 
@@ -11,7 +13,7 @@ email text);
 create table workshops(
 WorkshopID serial PRIMARY KEY,
 title text,
-date int,
+date date,
 location text,
 maxSeats int,
 instructor text);
@@ -29,15 +31,13 @@ FOREIGN KEY (workshop)
 REFERENCES workshops (WorkshopID)
 );
 
-INSERT into students(firstname,lastname,username,email) VALUES
-	('joe','bermingham','jberming','josephp@ppp');
 
+GRANT all on students to joe;
+GRANT all on workshops to joe;
+GRANT all on crosscheck to joe;
+GRANT all on students_studentid_seq to joe;
+GRANT ALL ON workshops_workshopid_seq to joe;
 
-
-INSERT into workshops(title,date,location,maxSeats,instructor) VALUES
-('computers','010198','trinkle','50','phil');
-
-
-
+\q
 
 
