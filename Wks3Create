@@ -2,6 +2,9 @@
 drop database wks3;
 create database wks3;
 \c wks3
+create roll joe;
+alter role with login;
+alter role with password Deadred00
 
 create table students (
 StudentID serial PRIMARY KEY ,
