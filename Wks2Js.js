@@ -12,7 +12,7 @@ host: 'localhost',
 };
 
 var pool = new Pool(config);
-app.set('port', (8080));
+app.set('port', (80));
 app.use(bodyParser.json({type: 'application/json'}));
 app.use(bodyParser.urlencoded({extended: 'true'}));
 
